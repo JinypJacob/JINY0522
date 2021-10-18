@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+-<OfficeApp xsi:type="MailApp" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
+
+<Id>{C341AD31-BF7A-4C1D-99F1-D2E5896BEB0A}</Id>
+
+<Version>1.0</Version>
+
+<ProviderName>Microsoft</ProviderName>
+
+<DefaultLocale>en-us</DefaultLocale>
+
+<DisplayName DefaultValue="Test Add-in"/>
+
+<Description DefaultValue="Insert your Test Add-in."/>
+
+<IconUrl DefaultValue="https://salilvs.github.io/Addin/assets/ADU-logo3.png"/>
+
+<HighResolutionIconUrl DefaultValue="https://salilvs.github.io/Addin/assets/final_logo.png"/>
+
+<SupportUrl DefaultValue="https://www.contoso.com/help"/>
+
+
+-<Requirements>
+
+
+-<Sets DefaultMinVersion="1.1">
+
+<Set Name="Mailbox"/>
+
+</Sets>
+
+</Requirements>
+
+<!-- Old schema. This will be overridden by the VersionOverrides below. -->
+
+
+
+-<FormSettings>
+
+
+-<Form xsi:type="ItemRead">
+
+
+-<DesktopSettings>
+
+<SourceLocation DefaultValue="https://salilvs.github.io/Addin/src/taskpane/HTML/editsignature.html"/>
+
+<RequestedHeight>250</RequestedHeight>
+
+</DesktopSettings>
+
+</Form>
+
+</FormSettings>
+
+<Permissions>ReadWriteMailbox</Permissions>
+
+
+-<Rule xsi:type="RuleCollection" Mode="Or">
+
+<Rule xsi:type="ItemIs" FormType="Read" ItemType="Message"/>
+
+</Rule>
+
+<DisableEntityHighlighting>true</DisableEntityHighlighting>
+
+<!-- /Old schema. -->
+
+
+
+-<VersionOverrides xsi:type="VersionOverridesV1_0" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides">
+
+
+-<VersionOverrides xsi:type="VersionOverridesV1_1" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1">
+
+<Description resid="residAppDesc"/>
+
+
+-<Requirements>
+
+
+-<bt:Sets DefaultMinVersion="1.3">
+
+<bt:Set Name="Mailbox"/>
+
+</bt:Sets>
+
+</Requirements>
+
+
+-<Hosts>
+
+
+-<Host xsi:type="MailHost">
+
+<!-- Specify the runtime for event-based activation. -->
+
+
+<!-- For more information, see https://docs.microsoft.com/office/dev/add-ins/outlook/autolaunch -->
+
+
+
+-<Runtimes>
+
+
+-<Runtime resid="Autorun">
+
+<Override type="javascript" resid="runtimeJs"/>
+
+</Runtime>
+
+</Runtimes>
+
+
+-<DesktopFormFactor>
+
+
+-<ExtensionPoint xsi:type="MessageComposeCommandSurface">
+
+
+-<OfficeTab id="TabDefault">
+
+
+-<Group id="mccsG0">
+
+<Label resid="residGL0"/>
+
+
+-<Control xsi:type="Button" id="MRCS_TpBtn0">
+
+<Label resid="residStr0"/>
+
+
+-<Supertip>
+
+<Title resid="residStr0"/>
+
+<Description resid="residTT0"/>
+
+</Supertip>
+
+
+-<Icon>
+
+<bt:Image resid="Icon16x16" size="16"/>
+
+<bt:Image resid="Icon16x16" size="32"/>
+
+<bt:Image resid="Icon16x16" size="80"/>
+
+</Icon>
+
+
+-<Action xsi:type="ShowTaskpane">
+
+<SourceLocation resid="residUrl0"/>
+
+</Action>
+
+</Control>
+
+
+-<Control xsi:type="Menu" id="msgComposeMenuButton">
+
+<Label resid="menuComposeButtonLabel"/>
+
+
+-<Supertip>
+
+<Title resid="menuComposeSuperTipTitle"/>
+
+<Description resid="menuComposeSuperTipDescription"/>
+
+</Supertip>
+
+
+-<Icon>
+
+<bt:Image resid="Icon16x16" size="16"/>
+
+<bt:Image resid="Icon16x16" size="32"/>
+
+<bt:Image resid="Icon16x16" size="80"/>
+
+</Icon>
+
+
+-<Items>
+
+
+-<Item id="msgComposeMenuItem1">
+
+<Label resid="menuItem1ComposeLabel"/>
+
+
+-<Supertip>
+
+<Title resid="menuItem1ComposeLabel"/>
+
+<Description resid="menuItem1ComposeTip"/>
+
+</Supertip>
+
+
+-<Icon>
+
+<bt:Image resid="Icon16x16" size="16"/>
+
+<bt:Image resid="Icon16x16" size="32"/>
+
+<bt:Image resid="Icon16x16" size="80"/>
+
+</Icon>
+
+
+-<Action xsi:type="ShowTaskpane">
+
+<SourceLocation resid="residUrl1"/>
+
+</Action>
+
+</Item>
+
+
+-<Item id="msgComposeMenuItem2">
+
+<Label resid="menuItem2ComposeLabel"/>
+
+
+-<Supertip>
+
+<Title resid="menuItem2ComposeLabel"/>
+
+<Description resid="menuItem2ComposeTip"/>
+
+</Supertip>
+
+
+-<Icon>
+
+<bt:Image resid="Icon16x16" size="16"/>
+
+<bt:Image resid="Icon16x16" size="32"/>
+
+<bt:Image resid="Icon16x16" size="80"/>
+
+</Icon>
+
+
+-<Action xsi:type="ShowTaskpane">
+
+<SourceLocation resid="residUrl2"/>
+
+</Action>
+
+</Item>
+
+
+-<Item id="msgComposeMenuItem3">
+
+<Label resid="menuItem3ComposeLabel"/>
+
+
+-<Supertip>
+
+<Title resid="menuItem3ComposeLabel"/>
+
+<Description resid="menuItem3ComposeTip"/>
+
+</Supertip>
+
+
+-<Icon>
+
+<bt:Image resid="Icon16x16" size="16"/>
+
+<bt:Image resid="Icon16x16" size="32"/>
+
+<bt:Image resid="Icon16x16" size="80"/>
+
+</Icon>
+
+
+-<Action xsi:type="ShowTaskpane">
+
+<SourceLocation resid="residUrl3"/>
+
+</Action>
+
+</Item>
+
+</Items>
+
+</Control>
+
+</Group>
+
+</OfficeTab>
+
+</ExtensionPoint>
+
+
+-<ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+
+
+-<OfficeTab id="TabDefault">
+
+
+-<Group id="aocsG0">
+
+<Label resid="residGL0"/>
+
+
+-<Control xsi:type="Button" id="MRCS_TpBtn1">
+
+<Label resid="residStr0"/>
+
+
+-<Supertip>
+
+<Title resid="residStr0"/>
+
+<Description resid="residTT0"/>
+
+</Supertip>
+
+
+-<Icon>
+
+<bt:Image resid="Icon16x16" size="16"/>
+
+<bt:Image resid="Icon16x16" size="32"/>
+
+<bt:Image resid="Icon16x16" size="80"/>
+
+</Icon>
+
+
+-<Action xsi:type="ShowTaskpane">
+
+<SourceLocation resid="residUrl0"/>
+
+</Action>
+
+</Control>
+
+</Group>
+
+</OfficeTab>
+
+</ExtensionPoint>
+
+<!-- Specify function to call for new message and new appointment events -->
+
+
+
+-<ExtensionPoint xsi:type="LaunchEvent">
+
+
+-<LaunchEvents>
+
+<LaunchEvent FunctionName="checkSignature" Type="OnNewMessageCompose"/>
+
+<LaunchEvent FunctionName="checkSignature" Type="OnNewAppointmentOrganizer"/>
+
+</LaunchEvents>
+
+<SourceLocation resid="Autorun"/>
+
+</ExtensionPoint>
+
+</DesktopFormFactor>
+
+</Host>
+
+</Hosts>
+
+
+-<Resources>
+
+
+-<bt:Images>
+
+<bt:Image DefaultValue="https://salilvs.github.io/Addin/assets/final_logo.png" id="Icon16x16"/>
+
+</bt:Images>
+
+
+-<bt:Urls>
+
+<bt:Url DefaultValue="https://salilvs.github.io/Addin/src/taskpane/HTML/editsignature.html" id="residUrl0"/>
+
+<bt:Url DefaultValue="https://salilvs.github.io/Addin/src/taskpane/HTML/Sampleform1.html" id="residUrl1"/>
+
+<bt:Url DefaultValue="https://salilvs.github.io/Addin/src/taskpane/HTML/testform.html" id="residUrl2"/>
+
+<bt:Url DefaultValue="https://salilvs.github.io/testaddin/src/taskpane/HTML/assignsignature.html" id="residUrl3"/>
+
+<bt:Url DefaultValue="https://salilvs.github.io/testaddin/src/taskpane/HTML/assignsignature.html" id="Autorun"/>
+
+<bt:Url DefaultValue="https://salilvs.github.io/Addin/src/taskpane/HTML/new.html" id="runtimeJs"/>
+
+</bt:Urls>
+
+
+-<bt:ShortStrings>
+
+<bt:String DefaultValue="Add-in Demo" id="residStr0"/>
+
+<bt:String DefaultValue="ADU" id="residGL0"/>
+
+<bt:String DefaultValue="Menu1" id="residStr1"/>
+
+<!-- <bt:String id="residStr0" DefaultValue="ADU"></bt:String> -->
+
+
+<bt:String DefaultValue="Insert message" id="menuComposeButtonLabel"/>
+
+<bt:String DefaultValue="Choose a message to insert" id="menuComposeSuperTipTitle"/>
+
+<bt:String DefaultValue="Menu1" id="menuItem1ComposeLabel"/>
+
+<bt:String DefaultValue="Menu2" id="menuItem2ComposeLabel"/>
+
+<bt:String DefaultValue="Menu3" id="menuItem3ComposeLabel"/>
+
+</bt:ShortStrings>
+
+
+-<bt:LongStrings>
+
+<bt:String DefaultValue="Insert your ADU." id="residAppDesc"/>
+
+<bt:String DefaultValue="Opens a pane displaying all available properties." id="residTT0"/>
+
+<bt:String DefaultValue="Inserts your choice of text into body of the message or appointment. This is an example of a drop-down menu button." id="menuComposeSuperTipDescription"/>
+
+<bt:String DefaultValue="Inserts Hello World! into the body of the message or appointment." id="menuItem1ComposeTip"/>
+
+<bt:String DefaultValue="Inserts Add-in commands are cool! into the body of the message or appointment." id="menuItem2ComposeTip"/>
+
+<bt:String DefaultValue="Inserts Visit Outlook Dev Center into the body of the message or appointment." id="menuItem3ComposeTip"/>
+
+</bt:LongStrings>
+
+</Resources>
+
+</VersionOverrides>
+
+</VersionOverrides>
+
+</OfficeApp>
